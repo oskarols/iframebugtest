@@ -1,0 +1,26 @@
+<!doctype>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <style>
+      iframe {
+        border: 5px solid black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>A.html</h2>
+    <button id="loadiframe">Load Iframe</button>
+    <iframe id="biframe" src="/iframe" frameborder="0">
+
+
+    </iframe>
+
+    <script>
+      $('#loadiframe').on('click', function() {
+        document.getElementById('biframe').contentWindow.postMessage('change window', 'http://localhost:3000');
+      })
+    </script>
+  </body>
+</html>

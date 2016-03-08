@@ -1,0 +1,32 @@
+<!doctype>
+<html>
+  <head><script src="jquery.js"></script>
+
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    h3 {
+      color: green;
+    }
+  </style>
+  </head>
+
+  <body>
+    <h2>B.html</h2>
+    <h3>Loaded subframe</h3>
+
+    <script>
+      var cdestination = 'http://localhost:5000';
+      $.ajax({
+        url: cdestination,
+        crossOrigin: true
+      }).then(function() {
+        $('h3').text('Loaded subframe');
+      }, function() {
+        $('h3').text('Unable to load subframe');
+      });
+    </script>
+  </body>
+</html>
